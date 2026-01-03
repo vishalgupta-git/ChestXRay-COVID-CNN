@@ -3,19 +3,23 @@
 ![Deep Learning](https://img.shields.io/badge/Deep%20Learning-CNN-blueviolet)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+
+---
+
 # 🫁 ChestXRay-COVID-CNN
 
 **CNN-Based Chest X-ray Classification for COVID-19 Detection**
 
 ChestXRay-COVID-CNN is a deep learning project that classifies chest X-ray images into multiple respiratory conditions (e.g., **COVID-19, Pneumonia, Normal**) using a custom Convolutional Neural Network (CNN) built with **TensorFlow/Keras**.
 
-The project demonstrates a **complete medical image classification pipeline**, including data preprocessing, augmentation, model training, evaluation, and performance analysis.
+The project demonstrates a **complete medical image classification pipeline**, including data preprocessing, augmentation, model training, evaluation, and an interactive web app for real-time inference.
 
 ---
 
 ## 📌 Project Highlights
 
 * ✅ End-to-end CNN pipeline (no shortcuts)
+* ✅ **Interactive Streamlit Web App** for user-friendly testing
 * ✅ Proper train / validation / test split
 * ✅ Data augmentation for better generalization
 * ✅ Regularization using Dropout & EarlyStopping
@@ -26,7 +30,7 @@ The project demonstrates a **complete medical image classification pipeline**, i
 
 ## 🧠 Model Architecture
 
-The model is a custom CNN designed for small-to-medium medical imaging datasets:
+The model is a custom CNN designed for small-to-medium medical imaging datasets.
 
 ```
 Input (128 × 128 × 3)
@@ -44,6 +48,7 @@ Global Average Pooling
 Dense (64) + Dropout (0.5)
 ↓
 Softmax (3 classes)
+
 ```
 
 **Why this design?**
@@ -58,10 +63,11 @@ Softmax (3 classes)
 
 * **Source:** Kaggle – COVID-19 Chest X-ray Dataset
 * **Classes:**
+* COVID-19
+* Pneumonia
+* Normal
 
-  * COVID-19
-  * Pneumonia
-  * Normal
+
 
 **Directory structure:**
 
@@ -75,6 +81,7 @@ Covid19-dataset/
     ├── COVID/
     ├── Pneumonia/
     └── Normal/
+
 ```
 
 ---
@@ -83,6 +90,7 @@ Covid19-dataset/
 
 * **Python 3.12**
 * **TensorFlow / Keras**
+* **Streamlit** (Web Interface)
 * NumPy, Pandas
 * Matplotlib, Seaborn
 * scikit-learn
@@ -96,13 +104,15 @@ Covid19-dataset/
 * **Optimizer:** Adam
 * **Metrics:** Accuracy (+ Recall during experiments)
 * **Callbacks:**
+* EarlyStopping (monitoring validation loss)
 
-  * EarlyStopping (monitoring validation loss)
+
 * **Input pipeline:**
+* Caching
+* Shuffling
+* Prefetching for performance
 
-  * Caching
-  * Shuffling
-  * Prefetching for performance
+
 
 ---
 
@@ -129,6 +139,20 @@ Medical datasets often suffer from class imbalance, so **recall and F1-score** a
 
 ---
 
+## 🖥️ Streamlit App Screenshots
+
+The project includes a user-friendly web interface where users can upload an X-ray image and get an instant classification with confidence scores.
+
+### 1. Home Page & Image Upload
+
+![App Home Page](screenshots/app.png)
+
+### 2. Prediction Results
+
+![Prediction Results](screenshots/result.png)
+
+---
+
 ## 🛠️ How to Run
 
 ### 1️⃣ Clone the repository
@@ -136,12 +160,14 @@ Medical datasets often suffer from class imbalance, so **recall and F1-score** a
 ```bash
 git clone https://github.com/vishalgupta-git/ChestXRay-COVID-CNN.git
 cd ChestXRay-COVID-CNN
+
 ```
 
 ### 2️⃣ Install dependencies
 
 ```bash
 pip install -r requirements.txt
+
 ```
 
 ### 3️⃣ Train the model
@@ -154,6 +180,17 @@ To train the model (future script):
 ```bash
 python train.py
 ```
+
+### 4️⃣ Run the Web App
+
+To launch the Streamlit interface:
+
+```bash
+streamlit run app.py
+
+```
+
+---
 
 ## 📌 Future Improvements
 
