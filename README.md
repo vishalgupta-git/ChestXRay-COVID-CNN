@@ -1,6 +1,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow&logoColor=white)
 ![Deep Learning](https://img.shields.io/badge/Deep%20Learning-CNN-blueviolet)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live_App-FF4B4B?logo=streamlit&logoColor=white)](https://chestxray-covid-cnn.streamlit.app/)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 
@@ -27,6 +28,14 @@ The project demonstrates a **complete medical image classification pipeline**, i
 * ✅ GPU-accelerated training support
 
 ---
+
+## 🌐 Live Demo
+
+🚀 **Try the live Streamlit app here:**  
+👉 https://chestxray-covid-cnn.streamlit.app/
+
+Upload a chest X-ray image and receive real-time predictions with confidence scores directly in your browser.
+
 
 ## 🧠 Model Architecture
 
@@ -142,6 +151,7 @@ Medical datasets often suffer from class imbalance, so **recall and F1-score** a
 ## 🖥️ Streamlit App Screenshots
 
 The project includes a user-friendly web interface where users can upload an X-ray image and get an instant classification with confidence scores.
+> 🔗 **Live App:** https://chestxray-covid-cnn.streamlit.app/
 
 ### 1. Home Page & Image Upload
 
