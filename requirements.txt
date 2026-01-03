@@ -1,5 +1,4 @@
 ipykernel
-python>=3.12
 tensorflow>=2.13
 numpy>=1.26
 pandas>=2.1
